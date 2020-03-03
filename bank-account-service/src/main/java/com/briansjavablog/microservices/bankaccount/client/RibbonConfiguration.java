@@ -3,6 +3,8 @@ package com.briansjavablog.microservices.bankaccount.client;
 import java.util.Arrays;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 
@@ -15,12 +17,11 @@ import com.netflix.loadbalancer.Server;
 import com.netflix.loadbalancer.ServerList;
 import com.netflix.loadbalancer.WeightedResponseTimeRule;
 
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RibbonClient(name="account-identifier-service")
 public class RibbonConfiguration {
 
+	private Logger log = LoggerFactory.getLogger(RibbonConfiguration.class);
 	
 	@Bean
 	public IRule loadBlancingRule() {

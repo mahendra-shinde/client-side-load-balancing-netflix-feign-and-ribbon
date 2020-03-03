@@ -3,6 +3,8 @@ package com.briansjavablog.accountidentifierservice.rest;
 import java.net.URISyntaxException;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.briansjavablog.accountidentifierservice.model.AccountIdentifier;
 import com.briansjavablog.accountidentifierservice.model.EnumAccountType;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @RestController
 public class AccountIdentifierController {
+
+
+	private Logger log = LoggerFactory.getLogger(AccountIdentifierController.class);
 
 	@Autowired	
 	private Environment environment;

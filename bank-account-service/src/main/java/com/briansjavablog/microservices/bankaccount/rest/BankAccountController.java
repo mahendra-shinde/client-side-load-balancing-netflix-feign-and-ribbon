@@ -2,6 +2,8 @@ package com.briansjavablog.microservices.bankaccount.rest;
 
 import java.net.URISyntaxException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,11 +14,10 @@ import com.briansjavablog.microservices.bankaccount.client.AccountIdentifierServ
 import com.briansjavablog.microservices.bankaccount.model.AccountIdentifier;
 import com.briansjavablog.microservices.bankaccount.model.BankAccount;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @RestController
 public class BankAccountController {
+	private Logger log = LoggerFactory.getLogger(BankAccountController.class);
+
 
 	@Autowired
 	public AccountIdentifierServiceClient accountIdentifierServiceClient; 

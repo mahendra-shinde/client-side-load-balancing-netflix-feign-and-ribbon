@@ -1,5 +1,6 @@
 package com.briansjavablog.microservices.bankaccount.client;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 
 import feign.Logger;
@@ -8,10 +9,9 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import feign.Retryer;
 import feign.auth.BasicAuthRequestInterceptor;
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 public class FeignConfiguration {
+
+	private org.slf4j.Logger log = LoggerFactory.getLogger(FeignConfiguration.class);
 
 	
 	/**

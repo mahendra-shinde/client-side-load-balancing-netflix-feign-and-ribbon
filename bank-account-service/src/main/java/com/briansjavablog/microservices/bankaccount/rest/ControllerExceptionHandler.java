@@ -1,5 +1,7 @@
 package com.briansjavablog.microservices.bankaccount.rest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -7,11 +9,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.briansjavablog.microservices.bankaccount.service.InvalidAccountBalanceException;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @ControllerAdvice
 public class ControllerExceptionHandler {
+	private Logger log = LoggerFactory.getLogger(ControllerExceptionHandler.class);
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(InvalidAccountBalanceException.class)
